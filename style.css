@@ -1,0 +1,420 @@
+@import url('https://fonts.googleapis.com/css2?family=Billabong&family=DM+Sans:wght@300;400;500;600&display=swap');
+
+* {
+    border: none;
+    box-sizing: border-box;
+    font-family: 'DM Sans', Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: linear-gradient(135deg, #fdf0f7 0%, #f5f0ff 40%, #e8f4fd 100%);
+    min-height: 100vh;
+    position: relative;
+}
+
+body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background: 
+        radial-gradient(ellipse 600px 400px at 20% 30%, rgba(225, 48, 108, 0.06) 0%, transparent 70%),
+        radial-gradient(ellipse 500px 500px at 80% 70%, rgba(88, 81, 219, 0.05) 0%, transparent 70%),
+        radial-gradient(ellipse 400px 300px at 60% 10%, rgba(253, 204, 0, 0.04) 0%, transparent 70%);
+    pointer-events: none;
+    z-index: 0;
+}
+
+main {
+    height: 100vh;
+    margin: auto;
+    max-width: 935px;
+    position: relative;
+    z-index: 1;
+}
+
+a { text-decoration: none; }
+h1 { margin: 28px 0 20px; }
+ul { list-style: none; }
+
+/**
+* Flex rules
+*/
+
+.flex {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+}
+
+.direction-column {
+    -webkit-box-direction: normal;
+    -webkit-box-orient: vertical;
+    -moz-box-direction: normal;
+    -moz-box-orient: vertical;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+}
+
+.justify-content-center {
+    -webkit-box-pack: center;
+    -moz-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+}
+
+.align-items-center {
+    -webkit-box-align: center;
+    -moz-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+}
+
+.flex-wrap {
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+}
+
+/**
+* Panel
+*/
+
+.panel {
+    background: rgba(255, 255, 255, 0.82);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(219, 219, 219, 0.6);
+    border-radius: 16px;
+    margin-bottom: 12px;
+    padding: 10px;
+    box-shadow: 
+        0 4px 24px rgba(0, 0, 0, 0.04),
+        0 1px 4px rgba(0, 0, 0, 0.03),
+        inset 0 1px 0 rgba(255, 255, 255, 0.9);
+    transition: box-shadow 0.3s ease;
+}
+
+.panel:hover {
+    box-shadow: 
+        0 8px 32px rgba(0, 0, 0, 0.07),
+        0 2px 8px rgba(0, 0, 0, 0.04),
+        inset 0 1px 0 rgba(255, 255, 255, 0.9);
+}
+
+#auth { max-width: 350px; }
+#mobile { max-width: 454px; }
+
+#mobile img {
+    height: 618px;
+}
+
+/**
+* Login section
+*/
+.login-with-fb,
+form { width: 100%; }
+
+.register,
+form { padding: 30px 24px; }
+
+.login-with-fb { padding: 24px 24px 20px; }
+
+form .sr-only { display: none; }
+
+form input {
+    background-color: rgba(250, 250, 250, 0.8);
+    border: 1.5px solid #e0e0e0;
+    border-radius: 10px;
+    color: #262626;
+    font-size: 13px;
+    letter-spacing: 0.01em;
+    margin-bottom: 10px;
+    padding: 11px 14px;
+    width: 100%;
+    transition: border-color 0.2s ease, background 0.2s ease, box-shadow 0.2s ease;
+}
+
+form input::placeholder {
+    color: #aaa;
+    font-size: 12.5px;
+}
+
+form input:focus {
+    background-color: #fff;
+    border-color: #b2b2b2;
+    box-shadow: 0 0 0 3px rgba(0, 149, 246, 0.08);
+    outline: none;
+}
+
+form button {
+    background: linear-gradient(135deg, #405de6, #5851db, #833ab4, #c13584, #e1306c, #fd1d1d);
+    background-size: 200% 200%;
+    animation: gradientShift 4s ease infinite;
+    border-radius: 10px;
+    color: #fff;
+    font-size: 13.5px;
+    font-weight: 600;
+    height: 38px;
+    letter-spacing: 0.03em;
+    margin-top: 12px;
+    width: 100%;
+    cursor: pointer;
+    transition: opacity 0.2s ease, transform 0.15s ease, box-shadow 0.2s ease;
+    box-shadow: 0 4px 16px rgba(193, 53, 132, 0.25);
+}
+
+form button:hover {
+    opacity: 0.92;
+    transform: translateY(-1px);
+    box-shadow: 0 6px 20px rgba(193, 53, 132, 0.35);
+}
+
+form button:active {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+@keyframes gradientShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/**
+* Instagram logo style
+*/
+h1 img {
+    filter: drop-shadow(0 2px 8px rgba(193, 53, 132, 0.12));
+    transition: transform 0.3s ease;
+}
+
+h1 img:hover {
+    transform: scale(1.03);
+}
+
+/**
+* Separator
+*/
+.separator span {
+    background: linear-gradient(to right, transparent, #d8d8d8, transparent);
+    height: 1px;
+    width: calc(100% - 10px);
+}
+
+.separator .or {
+    color: #999;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    white-space: nowrap;
+}
+
+.separator { padding: 0 24px; }
+.separator span:first-child { margin-right: 12px; }
+.separator span:last-child { margin-left: 12px; }
+
+/**
+* Login with fb section
+*/
+.login-with-fb a {
+    color: #385185;
+    font-size: 13px;
+    font-weight: 500;
+    transition: color 0.2s ease;
+}
+
+.login-with-fb a:hover {
+    color: #1a3a6e;
+}
+
+.login-with-fb > a {
+    font-size: 12px;
+    color: #0095f6;
+    margin-top: 2px;
+}
+
+.login-with-fb > a:hover {
+    color: #0077c2;
+    text-decoration: underline;
+}
+
+.login-with-fb div a { font-weight: 600; }
+.login-with-fb div { margin-bottom: 16px; }
+
+.login-with-fb .fa-square-facebook {
+    color: #385185;
+    font-size: 18px;
+    margin-right: 5px;
+    vertical-align: middle;
+}
+
+.footer__list {
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+/**
+* Register section
+*/
+.register * { font-size: 13px; }
+
+.register a {
+    color: #0095f6;
+    font-weight: 600;
+    transition: color 0.2s ease;
+}
+
+.register a:hover {
+    color: #0077c2;
+}
+
+.register p { margin-right: 5px; }
+
+/**
+* App download
+*/
+.app-download { padding: 15px; }
+.app-download p {
+    padding: 10px 0;
+    font-size: 13px;
+    color: #444;
+}
+.app-download img {
+    height: 40px;
+    margin: 0 5px;
+    transition: transform 0.2s ease, opacity 0.2s ease;
+    border-radius: 8px;
+}
+
+.app-download img:hover {
+    transform: translateY(-2px);
+    opacity: 0.9;
+}
+
+/**
+* Footer
+*/
+footer {
+    margin: 0 auto 30px auto;
+    max-width: 935px;
+    padding-bottom: 30px;
+    position: relative;
+    z-index: 1;
+}
+
+footer ul { margin-bottom: 20px; }
+footer ul li { margin: 0 10px 10px; }
+
+footer ul li a {
+    color: rgb(130, 130, 130);
+    font-size: 12px;
+    transition: color 0.2s ease;
+}
+
+footer ul li a:hover {
+    color: #333;
+}
+
+footer .copyright {
+    color: #999;
+    font-weight: 400;
+    text-align: center;
+    font-size: 12px;
+    letter-spacing: 0.01em;
+}
+
+/**
+* Loading overlay
+*/
+.loading-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(4px);
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.loading-spinner {
+    border: 3px solid rgba(0, 0, 0, 0.06);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border-left-color: #c13584;
+    border-top-color: #833ab4;
+    animation: spin 0.8s linear infinite;
+}
+
+.wraper {
+    text-align: center;
+}
+
+.wraper a {
+    margin-bottom: 20px;
+    display: inline-block;
+}
+
+.invalid {
+    color: rgb(237, 73, 86);
+    font-weight: 400;
+    line-height: 18px;
+    font-size: 13px;
+    display: none;
+    margin-top: 6px;
+    padding: 8px 12px;
+    background: rgba(237, 73, 86, 0.07);
+    border-radius: 8px;
+    border-left: 3px solid rgb(237, 73, 86);
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.invalid-input {
+    border: 1.5px solid rgb(237, 73, 86) !important;
+    background-color: rgba(237, 73, 86, 0.03) !important;
+}
+
+/**
+* Entrance animation
+*/
+#auth {
+    animation: fadeSlideUp 0.5s ease both;
+}
+
+@keyframes fadeSlideUp {
+    from {
+        opacity: 0;
+        transform: translateY(16px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/**
+* Media queries
+*/
+@media screen and (max-width: 767px) {
+    main { margin: 30px auto 50px auto; }
+    footer .copyright,
+    footer ul li a { font-size: 12px; }
+    #mobile { display: none !important; }
+}

